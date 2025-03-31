@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { createContext, useContext, useState } from 'react'
+import { PiThermometerColdBold } from 'react-icons/pi';
 
-const ThemeContext = () => {
+const ThemeContext = createContext();
+
+export const ThemeProvider = ({children}) => {
+  const [theme, setTheme] = useState('light')
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <div>ThemeContext</div>
-  )
-}
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
-export default ThemeContext
+
+export const useTheme = () => useContext(ThemeContext);
