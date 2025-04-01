@@ -1,14 +1,21 @@
-import React, { createContext, useContext, useState } from 'react'
-import { PiThermometerColdBold } from 'react-icons/pi';
+import React, { createContext, useContext, useState, useEffect} from 'react'
 
+// const storedTheme = localStorage.getItem('theme') || 'light';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({children}) => {
-  const [theme, setTheme] = useState('light')
+  const storedTheme = localStorage.getItem('theme') || 'light';
+  const [theme, setTheme] = useState(storedTheme)
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme)
   };
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme])
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

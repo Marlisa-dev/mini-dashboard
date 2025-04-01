@@ -3,10 +3,18 @@
     justify-content: space-between;
     width: 90vw;
     margin: 1rem auto;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--text-color);
     padding-bottom: 1rem;
     padding-left: 20px;
     padding-right: 20px;
+}
+.toggleButton{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 28px;
+    color: inherit;
+    margin-top: 4px;
 }
 
 @media (max-width: 768px) {

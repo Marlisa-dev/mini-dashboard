@@ -12,8 +12,7 @@ import { ThemeProvider } from './context/ThemeContext.jsx'
 
 function App() {
   return (
-
-    <ThemeProvider>
+    <ThemeProvider >
         <MainHeader />
         <Routes>
           <Route path="/" element={<Dashboard />}/>

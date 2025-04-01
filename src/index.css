@@ -6,3 +6,20 @@
     box-sizing: border-box; 
     font-family: Roboto;
 }
+
+.light {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #e7e7e7;
+}
+.dark {
+    --bg-color: #161516;
+    --text-color: #ffffff;
+    --card-bg: #282828;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}

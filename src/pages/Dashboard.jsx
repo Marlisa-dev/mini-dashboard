@@ -21,8 +21,8 @@ const Dashboard = () => {
         <NewsDashboard className={classes.card}/>
       </main>
       <div className={classes.footer}>
-        <p>by @EastRamses </p>
-        <FaHeart className={classes.footerIcon}/>
+        <p>by <a href='https://x.com/eastramses' target='_blank'>@EastRamses</a></p>
+        <FaHeart className={classes.footerIcon} style={{marginLeft: "4px"}}/>
       </div>
       
     </>

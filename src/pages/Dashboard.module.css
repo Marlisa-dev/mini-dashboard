@@ -8,7 +8,7 @@
     /* padding: 16px; */
 }
 .card{
-    background-color: grey;
+    background-color: var(--card-bg);
     height: 200px;
     height: calc((100vh - 140px) /2);
     border-radius: 8px;
@@ -18,6 +18,11 @@
     margin-top: 8px;
     display: flex;
     justify-content: center;
+    font-weight: bold;
+}
+.footer a{
+    text-decoration: none;
+    color: inherit
 }
 
 .footerIcon{
