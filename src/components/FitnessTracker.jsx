@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FitnessTracker = () => {
+const FitnessTracker = ({className}) => {
   return (
-    <div>FitnessTracker</div>
+    <div className={className}>FitnessTracker</div>
   )
 }
 

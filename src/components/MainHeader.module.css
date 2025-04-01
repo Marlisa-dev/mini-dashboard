@@ -5,5 +5,12 @@
     margin: 1rem auto;
     border-bottom: 1px solid black;
     padding-bottom: 1rem;
-    /* margin: 1rem 2.5rem ; */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .header{
+        max-width: 85vw;
+    }
 }

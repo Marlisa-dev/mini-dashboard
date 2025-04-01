@@ -1,0 +1,48 @@
+.dashboard {
+    /* border: 1px solid black; */
+    max-width: 90vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    /* padding: 16px; */
+}
+.card{
+    background-color: grey;
+    height: 200px;
+    height: calc((100vh - 140px) /2);
+    border-radius: 8px;
+    padding: 8px;
+}
+.footer{
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.footerIcon{
+    color: red;
+    margin-top: 2px;
+}
+
+/* iPad */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .dashboard{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile and small ipad */
+@media (max-width: 768px) {
+    .dashboard{
+        max-width: 85vw;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* @media (min-width: 768px) {
+    .dashboard{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+} */

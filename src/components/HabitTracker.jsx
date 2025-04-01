@@ -1,8 +1,8 @@
 import React from 'react'
 
-const HabitTracker = () => {
+const HabitTracker = ({className}) => {
   return (
-    <div>HabitTracker</div>
+    <div className={className}>HabitTracker</div>
   )
 }
 

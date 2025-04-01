@@ -1,8 +1,8 @@
 import React from 'react'
 
-const NewsDashboard = () => {
+const NewsDashboard = ({className}) => {
   return (
-    <div>NewsDashboard</div>
+    <div className={className}>NewsDashboard</div>
   )
 }
 

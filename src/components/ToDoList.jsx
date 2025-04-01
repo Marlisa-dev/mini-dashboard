@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ToDoList = () => {
+const ToDoList = ({className}) => {
   return (
-    <div>ToDoList</div>
+    <div className={className}>ToDoList</div>
   )
 }
 

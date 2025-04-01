@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FinanceTracker = () => {
+const FinanceTracker = ({className}) => {
   return (
-    <div>FinanceTracker</div>
+    <div className={className}>FinanceTracker</div>
   )
 }
 
