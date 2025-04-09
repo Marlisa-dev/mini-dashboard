@@ -6,6 +6,7 @@ const router = express.Router()
 router.get('/', async (req, res) => {
     try {
         const apiKey = process.env.NEWS_API_KEY
+        console.log(NEWS_API_KEY)
         const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&category=business&category=technology`);
         res.json(response.data);
     }
