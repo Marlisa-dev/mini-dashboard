@@ -1,37 +1,102 @@
-// import React from 'react'
-
-// const Weather = ({ className }) => {
-//   return (
-//     <div className={className}>Weather</div>
-//   )
-// }
-
-// export default Weather
-
 import React, { useEffect, useState } from 'react';
 import { getWeather } from '../api/weatherApi';
+import { Link } from 'react-router-dom';
+import { input } from 'motion/react-client';
 
 function WeatherWidget() {
   const [weather, setWeather] = useState(null);
+  const [city, setCity] = useState('Dallas');
+  const [days, setDays] = useState(3);
+  const [alerts, setAlerts] = useState('no');
+  const [inputValue, setInputValue] = useState(''); 
+
+  const fetchData = async (selectedCity) => {
+    const data = await getWeather(selectedCity);
+    setWeather(data);
+  }
 
   useEffect(() => {
-    async function fetchData() {
-      const data = await getWeather('New York');
-      setWeather(data);
-    }
-
-    fetchData();
+    fetchData(city);
   }, []);
 
   return (
     <div className="widget">
-      <h2>Weather</h2>
+      {/* <h2>Weather & Forecast</h2> */}
+
       {weather ? (
         <>
-          <p>{weather.location.name}</p>
-          <p>{weather.current.temp_c}°C</p>
-          <p>{weather.current.condition.text}</p>
-          <img src={weather.current.condition.icon} alt="icon" />
+          {/* ✅ Current Weather Section */}
+          <div className="current-weather">
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <h3 style={{marginBottom: '5px', textAlign: 'center'}}>Today's Weather</h3>
+              <div>
+                <input 
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="Enter city"
+                  style={{padding: '3px', marginRight: '5px', outline: 'none'}}></input>
+                <button 
+                  style={{padding: '4px 8px', border: 'none', backgroundColor: '#26c98e', color: 'white', fontWeight: 'bold', borderRadius: '3px'}}
+                  onClick={() => {
+                    if (!inputValue.trim()) return; // ignore empty input
+                    setCity(inputValue);           // update the city to fetch
+                    fetchData(inputValue);         // fetch new data
+                    setInputValue('');             // clear input
+                  }}
+                  >GO</button>
+              </div>
+
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div>
+                <p><strong>Location:</strong> {weather.location.name}</p>
+                <p><strong>Temperature:</strong> {weather.current.temp_f}°F</p>
+                <p><strong>Condition:</strong> {weather.current.condition.text}</p>
+              </div>
+              <img src={weather.current.condition.icon} alt="icon" />
+              <div style={{backgroundColor: 'var(--card-bg)', padding: '5px'}}>
+                <p><strong>No Bad Weather Alerts</strong></p>
+              </div>
+
+              </div>
+
+            </div>
+            
+
+
+
+
+
+          {/* ✅ 3-Day Forecast Section */}
+          <div className="forecast-weather">
+            <h3 style={{marginBottom: '5px', textAlign: 'center'}}>3-Day Forecast</h3>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between' }}>
+              {weather.forecast.forecastday.map((day) => {
+                const date = new Date(day.date);
+                const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+
+                return (
+                  <div
+                    key={day.date}
+                    style={{
+                      backgroundColor: 'var(--card-bg)',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      textAlign: 'center',
+                      flex: 1,
+                    }}
+                  >
+                    <h4>{weekday}</h4>
+                    <img src={day.day.condition.icon} alt="icon" />
+                    <p><strong>Low:</strong> {day.day.mintemp_f}°F</p>
+                    <p><strong>High:</strong>  {day.day.maxtemp_f}°F</p>
+                    <p>{day.day.condition.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </>
       ) : (
         <p>Loading...</p>
