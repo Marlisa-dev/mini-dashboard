@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getWeather } from '../api/weatherApi';
 import { Link } from 'react-router-dom';
-import { input } from 'motion/react-client';
 
 function WeatherWidget() {
   const [weather, setWeather] = useState(null);
@@ -45,7 +44,6 @@ function WeatherWidget() {
                   }}
                   >GO</button>
               </div>
-
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -55,27 +53,27 @@ function WeatherWidget() {
                 <p><strong>Condition:</strong> {weather.current.condition.text}</p>
               </div>
               <img src={weather.current.condition.icon} alt="icon" />
-              <div style={{backgroundColor: 'var(--card-bg)', padding: '5px'}}>
+
+
+              {/* TODO: Add alerts for bad city call, bad weather alerts and keydown search */}
+
+              {/* <div style={{backgroundColor: 'var(--card-bg)', padding: '5px'}}>
                 <p><strong>No Bad Weather Alerts</strong></p>
-              </div>
+              </div> */}
 
               </div>
-
             </div>
             
-
-
-
-
 
           {/* ✅ 3-Day Forecast Section */}
           <div className="forecast-weather">
             <h3 style={{marginBottom: '5px', textAlign: 'center'}}>3-Day Forecast</h3>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between' }}>
-              {weather.forecast.forecastday.map((day) => {
+              {weather.forecast.forecastday.slice(1).map((day) => {
                 const date = new Date(day.date);
+                console.log(date)
                 const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
-
+                console.log(weekday)
                 return (
                   <div
                     key={day.date}
@@ -88,6 +86,7 @@ function WeatherWidget() {
                     }}
                   >
                     <h4>{weekday}</h4>
+                    <p>{new Date(day.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
                     <img src={day.day.condition.icon} alt="icon" />
                     <p><strong>Low:</strong> {day.day.mintemp_f}°F</p>
                     <p><strong>High:</strong>  {day.day.maxtemp_f}°F</p>
