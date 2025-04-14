@@ -35,7 +35,7 @@ function WeatherWidget() {
                   placeholder="Enter city"
                   style={{padding: '3px', marginRight: '5px', outline: 'none'}}></input>
                 <button 
-                  style={{padding: '4px 8px', border: 'none', backgroundColor: '#26c98e', color: 'white', fontWeight: 'bold', borderRadius: '3px'}}
+                  style={{padding: '4px 8px', border: 'none', backgroundColor: '#26c98e', color: 'white', fontWeight: 'bold', borderRadius: '3px', cursor: 'pointer'}}
                   onClick={() => {
                     if (!inputValue.trim()) return; // ignore empty input
                     setCity(inputValue);           // update the city to fetch
@@ -71,9 +71,9 @@ function WeatherWidget() {
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between' }}>
               {weather.forecast.forecastday.slice(1).map((day) => {
                 const date = new Date(day.date);
-                console.log(date)
+                // console.log(date)
                 const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
-                console.log(weekday)
+                // console.log(weekday)
                 return (
                   <div
                     key={day.date}
