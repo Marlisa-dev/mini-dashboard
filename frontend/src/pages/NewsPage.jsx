@@ -67,7 +67,7 @@ const NewsPage = () => {
         ) : (
           articles.map((article, i) => (
             <div key={i} className="news-card">
-              <h3>{article.title.split(' - ').slice(0, -1).join(' - ')}</h3>
+              <h3 style={{color: '#db4c32'}}>{article.title.split(' - ').slice(0, -1).join(' - ')}</h3>
               <p><strong>Source: </strong>{article.source.name}</p>
               <p><strong>Author(s): </strong>{article.author}</p>
               <p><strong>Summary: </strong>{article.description}</p>
