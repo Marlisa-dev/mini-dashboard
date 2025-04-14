@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     });
 
     // ✅ Confirm forecast exists
-    console.log('forecast.forecastday:', response.data.forecast?.forecastday);
+    // console.log('forecast.forecastday:', response.data.forecast?.forecastday);
 
     res.json(response.data);
   } catch (error) {

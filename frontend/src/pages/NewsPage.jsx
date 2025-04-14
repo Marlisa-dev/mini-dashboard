@@ -1,10 +1,17 @@
 import { useState, useEffect} from 'react'
 import { getNewsByCategory } from '../api/newsApi';
 import { Link } from 'react-router-dom';
+// import Footer from '../components/Footer';
 
 const categories = [
-  '', 'business', 'entertainment', 'general',
-  'health', 'science', 'sports', 'technology'
+  '', 
+  'business', 
+  'entertainment', 
+  'general',
+  'health', 
+  'science', 
+  'sports', 
+  'technology'
 ];
 
 const NewsPage = () => {
@@ -69,7 +76,9 @@ const NewsPage = () => {
           ))
         )}
       </div>
+      {/* <Footer /> */}
       </div>
+      
   )
 }
 

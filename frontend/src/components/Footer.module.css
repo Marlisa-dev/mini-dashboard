@@ -1,0 +1,16 @@
+.footer{
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.footer a{
+    text-decoration: none;
+    color: inherit
+}
+
+.footerIcon{
+    color: red;
+    margin-top: 2px;
+}
