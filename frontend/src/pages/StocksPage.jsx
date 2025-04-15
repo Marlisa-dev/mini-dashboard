@@ -38,7 +38,8 @@ const StocksPage = () => {
                     border: 'none',
                     background: activeTab === tab.key ? '#26c98e' : '#ccc',
                     color: activeTab === tab.key ? 'white' : 'black',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    fontWeight: 'bold'
                     }}
                 >
                     {tab.label}

@@ -6,13 +6,15 @@ function WeatherWidget() {
   const [city, setCity] = useState('Dallas');
   const [inputValue, setInputValue] = useState(''); 
 
+  const fetchData = async (selectedCity) => {
+    const data = await getWeather(selectedCity);
+    setWeather(data);
+  };
+
   useEffect(() => {
-    const fetchData = async (selectedCity) => {
-      const data = await getWeather(selectedCity);
-      setWeather(data);
-    }
-    fetchData(city);
+    fetchData(city); // ✅ Works fine now
   }, []);
+
 
   return (
     <div className="widget">
