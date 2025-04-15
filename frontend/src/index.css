@@ -69,15 +69,16 @@ body{
 .back-home{
     font-size: 14px;
     font-weight: bold;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    background-color: var(--btn-bg, #1cb07a);
+    background-color: var(--btn-bg, #2a77ea);
     color: white;
     margin-left: 10px;
 }
 .back-home:hover{
-    background-color: var(--btn-bg, #179567);
+    background-color: var(--btn-bg, #225eb8);
 
 }
 

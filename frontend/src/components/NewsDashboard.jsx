@@ -5,7 +5,7 @@ import Lottie from 'lottie-react'
 
 import arrowAnimation from "../../assets/Arrow-Animation.json"
 
-const NewsDashboard = ({className}) => {
+const NewsDashboard = () => {
 
   const [headlines, setHeadlines]= useState([])
   const [currentIndex, setCurrentIndex]= useState(0)

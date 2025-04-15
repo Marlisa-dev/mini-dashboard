@@ -10,7 +10,7 @@ const cities = [
   { label: 'Sydney', timeZone: 'Australia/Sydney' },
 ];
 
-const WorldClock = ({className}) => {
+const WorldClock = () => {
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {

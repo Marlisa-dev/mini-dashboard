@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { getWeather } from '../api/weatherApi';
-import { Link } from 'react-router-dom';
 
 function WeatherWidget() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState('Dallas');
-  const [days, setDays] = useState(3);
-  const [alerts, setAlerts] = useState('no');
   const [inputValue, setInputValue] = useState(''); 
 
-  const fetchData = async (selectedCity) => {
-    const data = await getWeather(selectedCity);
-    setWeather(data);
-  }
-
   useEffect(() => {
+    const fetchData = async (selectedCity) => {
+      const data = await getWeather(selectedCity);
+      setWeather(data);
+    }
     fetchData(city);
   }, []);
 
@@ -69,7 +65,7 @@ function WeatherWidget() {
           <div className="forecast-weather">
             <h3 style={{marginBottom: '5px', textAlign: 'center'}}>3-Day Forecast</h3>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between' }}>
-              {weather.forecast.forecastday.slice(1).map((day) => {
+              {weather.forecast.forecastday.slice(1, 4).map((day) => {
                 const date = new Date(day.date);
                 // console.log(date)
                 const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });

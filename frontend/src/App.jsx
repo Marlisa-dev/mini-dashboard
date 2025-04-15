@@ -3,8 +3,7 @@ import MainHeader from "./components/MainHeader.jsx"
 import Dashboard from './pages/Dashboard.jsx'
 import CryptoPage from './pages/CryptoPage.jsx'
 import NewsPage from './pages/NewsPage.jsx'
-import StockPage from './pages/StockPage.jsx'
-import ToDoPage from './pages/ToDoPage.jsx'
+import StocksPage from "./pages/StocksPage.jsx"
 import Footer from "./components/Footer.jsx"
 import { ThemeProvider } from './context/ThemeContext.jsx'
 
@@ -16,8 +15,7 @@ function App() {
           <Route path="/" element={<Dashboard />}/>
           <Route path="/crypto" element={<CryptoPage />}/>
           <Route path="/news" element={<NewsPage />}/>
-          <Route path="/stocks" element={<StockPage />}/>
-          <Route path="/todos" element={<ToDoPage />}/>
+          <Route path="/stocks" element={<StocksPage />}/>
         </Routes>
         <Footer />
     </ThemeProvider>
