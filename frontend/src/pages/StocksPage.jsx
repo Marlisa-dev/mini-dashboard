@@ -1,10 +1,10 @@
 import { useState, useEffect} from 'react'
-import GainersLosersTab from '../components/GainersLosersTab';
-import InsiderTab from '../components/InsiderTab';
-import GDPChartTab from '../components/GDPChartTab';
-import InflationChartTab from '../components/InflationChartTab';
-import TreasuryYieldTab from '../components/TreasuryYieldTab';
-import ETFProfileTab from '../components/ETFProfileTab';
+import GainersLosersTab from '../components/stocks/GainersLosersTab';
+import InsiderTab from '../components/stocks/InsiderTab';
+import GDPChartTab from '../components/stocks/GDPChartTab';
+import InflationChartTab from '../components/stocks/InflationChartTab';
+import TreasuryYieldTab from '../components/stocks/TreasuryYieldTab';
+import ETFProfileTab from '../components/stocks/ETFProfileTab';
 import HomeButton from '../components/HomeButton';
 
 const StocksPage = () => {

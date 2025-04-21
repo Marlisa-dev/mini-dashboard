@@ -1,0 +1,53 @@
+.gainersloserstab {
+    width: 82vw;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    text-align: center;
+    margin-bottom: 1.4rem;
+    font-size: 36px;
+    font-weight: bold;  
+}
+
+.table{
+    background-color: var(--card-bg);
+    padding: 1.6rem  ;
+    border-radius: 20px;
+    text-align: center;
+}
+.table th{
+    font-size: 23px;
+    padding-bottom: 20px;
+}
+.table td{
+    padding: 0.7rem;
+    font-size: 20px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.activelytradedsection {
+    width: 60vw;
+    margin: 3rem auto;
+}
+
+.activelytradedtable{
+    background-color: var(--card-bg);
+    padding: 1.6rem  ;
+    border-radius: 20px;
+    text-align: center;
+    /* margin: auto; */
+}
+
+.activelytradedtable th{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.activelytradedtable td{
+    padding: 0.7rem;
+    font-size: 20px;
+    border-bottom: 1px solid var(--text-color);
+}
+
