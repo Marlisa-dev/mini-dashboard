@@ -1,7 +1,6 @@
 import { useState, useEffect} from 'react'
 import { getNewsByCategory } from '../api/newsApi';
-import { Link } from 'react-router-dom';
-// import Footer from '../components/Footer';
+import HomeButton from '../components/HomeButton';
 
 const categories = [
   '', 
@@ -48,12 +47,7 @@ const NewsPage = () => {
                 </option>
             ))}
         </select>
-
-        <Link to="/">
-          <button  className="back-home" >
-            Back to Home
-          </button>
-        </Link>
+        <HomeButton />
       </div>
 
       <h2 style={{marginTop: '1.5rem', marginBottom: '1.5rem', textAlign: 'center', textDecoration: 'underline'}}>Today's Top News</h2>

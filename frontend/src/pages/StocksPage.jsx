@@ -1,11 +1,11 @@
 import { useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
 import GainersLosersTab from '../components/GainersLosersTab';
 import InsiderTab from '../components/InsiderTab';
 import GDPChartTab from '../components/GDPChartTab';
 import InflationChartTab from '../components/InflationChartTab';
 import TreasuryYieldTab from '../components/TreasuryYieldTab';
 import ETFProfileTab from '../components/ETFProfileTab';
+import HomeButton from '../components/HomeButton';
 
 const StocksPage = () => {
 
@@ -46,12 +46,7 @@ const StocksPage = () => {
                 </button>
             ))}
             </div>
-
-            <Link to="/">
-          <button  className="back-home" >
-            Back to Home
-          </button>
-        </Link>
+            <HomeButton />
         </div>
 
         <div className="stock-page-content">
