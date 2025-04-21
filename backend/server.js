@@ -1,6 +1,10 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+// const result = dotenv.config();
+// console.log('🔍 dotenv result:', result);
+// console.log('📦 process.env.STOCKS_API_KEY:', process.env.STOCKS_API_KEY);
+
 import express from 'express';
 import cors from 'cors';
 
