@@ -16,3 +16,18 @@ export async function getGainersLosers() {
         return { top_gainers: [], top_losers: [] }; // Return empty arrays on error
     }
 }
+
+export async function getRealGDP() {
+    try {
+        const response = await fetch(`${BASE_URL}/gdp`);
+        if (!response.ok) throw new Error('Failed to Real GDP Data');
+        const data = await response.json();
+        console.log('Real GDP API response:', data); // ✅ Debug here
+        return {
+        data: data.data || [],
+        };
+    } catch (error) {
+        console.error('❌ Gainers/Losers API error:', error.message);
+        return { data: [] }; // Return empty arrays on error
+    }
+}

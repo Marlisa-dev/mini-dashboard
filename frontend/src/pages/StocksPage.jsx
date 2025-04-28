@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import GainersLosersTab from '../components/stocks/GainersLosersTab';
 import InsiderTab from '../components/stocks/InsiderTab';
-import GDPChartTab from '../components/stocks/GDPChartTab';
+import RealGDPChartTab from '../components/stocks/RealGDPChartTab';
 import InflationChartTab from '../components/stocks/InflationChartTab';
 import TreasuryYieldTab from '../components/stocks/TreasuryYieldTab';
 import ETFProfileTab from '../components/stocks/ETFProfileTab';
@@ -39,7 +39,7 @@ const StocksPage = () => {
                     background: activeTab === tab.key ? '#26c98e' : '#ccc',
                     color: activeTab === tab.key ? 'white' : 'black',
                     cursor: 'pointer',
-                    fontWeight: 'bold'
+                    // fontWeight: 'bold'
                     }}
                 >
                     {tab.label}
@@ -54,7 +54,7 @@ const StocksPage = () => {
             <div>
                 {activeTab === 'gainers' && <GainersLosersTab />}
                 {activeTab === 'insiders' && <InsiderTab />}
-                {activeTab === 'gdp' && <GDPChartTab />}
+                {activeTab === 'gdp' && <RealGDPChartTab />}
                 {activeTab === 'inflation' && <InflationChartTab />}
                 {activeTab === 'yield' && <TreasuryYieldTab />}
                 {activeTab === 'etf' && <ETFProfileTab />}
