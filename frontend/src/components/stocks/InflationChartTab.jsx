@@ -100,8 +100,14 @@ const InflationChartTab = () => {
   return (
     <div style={{ padding: '1rem', height: '560px', marginBottom: '2.8rem' }}>
       <p style={{paddingBottom: '14px', margin: 'auto', fontSize: '18px', width: '75vw'}}>Inflation is the gradual loss of purchasing power, reflected in a broad rise in prices for goods and services. High rates of inflation reflected in your bills—from groceries to utilities to even higher mortgage payments.<strong>- McKinsey & Company</strong></p>
-      {inflationData.labels.length > 0 ? (
-        <Line ref={chartRef} data={chartData} options={options} />
+      
+      {inflationData.labels.length > 0 ? 
+      (
+        <Line 
+          ref={chartRef} 
+          data={chartData} 
+          options={options} 
+        />
       ) : (
         <p>Loading Inflation Rates...</p>
       )}

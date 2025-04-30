@@ -99,8 +99,14 @@ const RealGDPChartTab = () => {
   return (
     <div style={{ padding: '1rem', height: '560px', marginBottom: '2.8rem' }}>
       <p style={{paddingBottom: '14px', margin: 'auto', fontSize: '18px', width: '75vw'}}>Real gross domestic product is an inflation-adjusted measure that reflects the value of all goods and services produced by an economy in a given year. Real GDP makes comparing GDP more meaningful because it shows comparisons for both the quantity and value of goods and services. <strong>- Investopedia</strong></p>
-      {gdpData.labels.length > 0 ? (
-        <Line ref={chartRef} data={chartData} options={options} />
+      
+      {gdpData.labels.length > 0 ? 
+      (
+        <Line 
+          ref={chartRef} 
+          data={chartData} 
+          options={options} 
+        />
       ) : (
         <p>Loading GDP chart...</p>
       )}
