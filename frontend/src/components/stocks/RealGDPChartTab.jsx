@@ -2,16 +2,12 @@ import { useEffect, useState, useRef } from 'react';
 import { getRealGDP } from '../../api/stocksApi';
 import { Chart as ChartJs, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-// import { useTheme } from '../../context/ThemeContext';
-
 
 ChartJs.register(...registerables);
 
 const RealGDPChartTab = () => {
 
-  // const { theme } = useTheme(); 
   const gridColor = getComputedStyle(document.documentElement).getPropertyValue('--grid-color').trim();
-
   const [gdpData, setGdpData] = useState({ labels: [], values: [] });
   const chartRef = useRef(null); // ✅ Ref to access the canvas for gradient
 
@@ -55,10 +51,8 @@ const RealGDPChartTab = () => {
         },
         borderColor: '#26c98e',
         tension: 0.3,
-
         responsive: true,
         maintainAspectRatio: false, // ✅ VERY IMPORTANT
-
     
         // ✅ Hover and point styling here:
         pointBackgroundColor: '#26c98e',  // Color of points
@@ -70,8 +64,6 @@ const RealGDPChartTab = () => {
         pointHoverBorderWidth: 2,
       },
     ]
-    
-
   };
 
   const options = {

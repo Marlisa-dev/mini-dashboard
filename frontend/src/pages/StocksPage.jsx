@@ -19,7 +19,7 @@ const StocksPage = () => {
   return (
     <div className="stocks-page" style={{ padding: '1rem', width: '90vw', margin: 'auto' }}>
         <div className="stocks-page-header" style={{display: 'flex', justifyContent: 'space-between'}}>
-            <h2 style={{ marginBottom: '1rem' }}>📊 Stock Tracker</h2>
+            <h2>📊 Stock Tracker</h2>
 
             {/* 🔘 Tab Buttons */}
             <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>

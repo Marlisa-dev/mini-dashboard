@@ -31,3 +31,18 @@ export async function getRealGDP() {
         return { data: [] }; // Return empty arrays on error
     }
 }
+
+export async function getInflationRates() {
+    try {
+        const response = await fetch(`${BASE_URL}/inflation`);
+        if (!response.ok) throw new Error('Failed to Inflation Rates Data');
+        const data = await response.json();
+        console.log('Inflation Rates response:', data); // ✅ Debug here
+        return {
+        data: data.data || [],
+        };
+    } catch (error) {
+        console.error('❌ Inflation Rates API error:', error.message);
+        return { data: [] }; // Return empty arrays on error
+    }
+}

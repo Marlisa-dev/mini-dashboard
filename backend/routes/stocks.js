@@ -24,21 +24,21 @@ router.get('/gainers-losers', async (req, res) => {
 });
 
 // 🕵️ Insider Transactions
-router.get('/insiders/:symbol', async (req, res) => {
-  const API_KEY = process.env.STOCKS_API_KEY;
-  try {
-    const response = await axios.get(`https://www.alphavantage.co/query`, {
-      params: {
-        function: 'INSIDER_TRANSACTIONS',
-        symbol: req.params.symbol,
-        apikey: API_KEY,
-      },
-    });
-    res.json(response.data);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch insider transactions' });
-  }
-});
+// router.get('/insiders/:symbol', async (req, res) => {
+//   const API_KEY = process.env.STOCKS_API_KEY;
+//   try {
+//     const response = await axios.get(`https://www.alphavantage.co/query`, {
+//       params: {
+//         function: 'INSIDER_TRANSACTIONS',
+//         symbol: req.params.symbol,
+//         apikey: API_KEY,
+//       },
+//     });
+//     res.json(response.data);
+//   } catch (err) {
+//     res.status(500).json({ error: 'Failed to fetch insider transactions' });
+//   }
+// });
 
 // 📊 Real GDP
 router.get('/gdp', async (req, res) => {
@@ -74,22 +74,22 @@ router.get('/inflation', async (req, res) => {
 });
 
 // 💰 Treasury Yields
-router.get('/yields', async (req, res) => {
-  const API_KEY = process.env.STOCKS_API_KEY;
-  try {
-    const response = await axios.get(`https://www.alphavantage.co/query`, {
-      params: {
-        function: 'TREASURY_YIELD',
-        interval: 'monthly',
-        maturity: '10year',
-        apikey: API_KEY,
-      },
-    });
-    res.json(response.data);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch treasury yields' });
-  }
-});
+// router.get('/yields', async (req, res) => {
+//   const API_KEY = process.env.STOCKS_API_KEY;
+//   try {
+//     const response = await axios.get(`https://www.alphavantage.co/query`, {
+//       params: {
+//         function: 'TREASURY_YIELD',
+//         interval: 'monthly',
+//         maturity: '10year',
+//         apikey: API_KEY,
+//       },
+//     });
+//     res.json(response.data);
+//   } catch (err) {
+//     res.status(500).json({ error: 'Failed to fetch treasury yields' });
+//   }
+// });
 
 // 📁 ETF Profile
 router.get('/etf/:symbol', async (req, res) => {
