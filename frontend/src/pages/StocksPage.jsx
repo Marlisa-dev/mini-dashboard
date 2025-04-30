@@ -1,9 +1,7 @@
-import { useState, useEffect} from 'react'
+import { useState } from 'react'
 import GainersLosersTab from '../components/stocks/GainersLosersTab';
-import InsiderTab from '../components/stocks/InsiderTab';
 import RealGDPChartTab from '../components/stocks/RealGDPChartTab';
 import InflationChartTab from '../components/stocks/InflationChartTab';
-import TreasuryYieldTab from '../components/stocks/TreasuryYieldTab';
 import ETFProfileTab from '../components/stocks/ETFProfileTab';
 import HomeButton from '../components/HomeButton';
 
@@ -13,10 +11,8 @@ const StocksPage = () => {
 
   const tabs = [
     { key: 'gainers', label: 'Top Gainers & Losers' },
-    { key: 'insiders', label: 'Insider Transactions' },
     { key: 'gdp', label: 'Real GDP' },
     { key: 'inflation', label: 'Inflation Rates' },
-    { key: 'yield', label: 'Treasury Yields' },
     { key: 'etf', label: 'ETF Profiles' },
   ];
 
@@ -53,10 +49,8 @@ const StocksPage = () => {
             {/* 🧠 Dynamic Tab Content */}
             <div>
                 {activeTab === 'gainers' && <GainersLosersTab />}
-                {activeTab === 'insiders' && <InsiderTab />}
                 {activeTab === 'gdp' && <RealGDPChartTab />}
                 {activeTab === 'inflation' && <InflationChartTab />}
-                {activeTab === 'yield' && <TreasuryYieldTab />}
                 {activeTab === 'etf' && <ETFProfileTab />}
             </div>
         </div>
