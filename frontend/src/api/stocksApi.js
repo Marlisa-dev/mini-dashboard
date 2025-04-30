@@ -46,3 +46,17 @@ export async function getInflationRates() {
         return { data: [] }; // Return empty arrays on error
     }
 }
+
+export async function getETFProfile(symbol) {
+    try {
+      const response = await fetch(`${BASE_URL}/etf/${symbol}`);
+      if (!response.ok) throw new Error('Failed to fetch ETF profile');
+      const data = await response.json();
+      console.log("📦 Raw ETF Profile data:", data); // ✅ Debug
+      return data;
+    }
+    catch (error) {
+      console.error('❌ ETF API error:', error.message);
+      return null; // Return null on error
+    }
+};
