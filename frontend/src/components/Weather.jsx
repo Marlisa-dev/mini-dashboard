@@ -15,25 +15,26 @@ function WeatherWidget() {
     fetchData(city); // ✅ Works fine now
   }, []);
 
-
   return (
-    <div className="widget">
+    <>
+    <div className="widget" >
+    <h2 style={{marginBottom: '5px', textAlign: 'center'}}>Today's Weather</h2>
       {/* <h2>Weather & Forecast</h2> */}
 
       {weather ? (
         <>
           {/* ✅ Current Weather Section */}
-          <div className="current-weather">
+          <div className="current-weather" style={{ display: 'flex', justifyContent: 'space-around' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h3 style={{marginBottom: '5px', textAlign: 'center'}}>Today's Weather</h3>
+
               <div>
                 <input 
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Enter city"
-                  style={{padding: '3px', marginRight: '5px', outline: 'none'}}></input>
+                  style={{padding: '4px', marginRight: '5px', outline: 'none', height: '40px', width: '200px', fontSize: '20px'}}></input>
                 <button 
-                  style={{padding: '4px 8px', border: 'none', backgroundColor: '#26c98e', color: 'white', fontWeight: 'bold', borderRadius: '3px', cursor: 'pointer'}}
+                  style={{padding: '4px 8px', border: 'none', backgroundColor: '#26c98e', color: 'white', fontWeight: 'bold', borderRadius: '3px', cursor: 'pointer', height: '39px', fontSize: '20px'}}
                   onClick={() => {
                     if (!inputValue.trim()) return; // ignore empty input
                     setCity(inputValue);           // update the city to fetch
@@ -67,7 +68,7 @@ function WeatherWidget() {
           <div className="forecast-weather">
             <h3 style={{marginBottom: '5px', textAlign: 'center'}}>3-Day Forecast</h3>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between' }}>
-              {weather.forecast.forecastday.slice(1, 4).map((day) => {
+              {weather.forecast.forecastday.map((day) => {
                 const date = new Date(day.date);
                 // console.log(date)
                 const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
@@ -99,6 +100,7 @@ function WeatherWidget() {
         <p>Loading...</p>
       )}
     </div>
+    </>
   );
 }
 

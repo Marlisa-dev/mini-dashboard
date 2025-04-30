@@ -1,11 +1,9 @@
 .dashboard {
-    /* border: 1px solid black; */
     max-width: 90vw;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    /* padding: 16px; */
 }
 .card{
     background-color: var(--card-bg);
@@ -44,13 +42,3 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
-
-/* @media (min-width: 768px) {
-    .dashboard{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-} */
-
-
-/* Weather Widget */
